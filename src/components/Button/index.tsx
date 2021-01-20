@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, ButtonText } from './styles';
 
-const Button: React.FC = () => {
-  return <Container />;
+const Button: React.FC = ({ children }) => {
+  return (
+    <Container>
+      <ButtonText>{children}</ButtonText>
+    </Container>
+  );
 };
 
 export default Button;
