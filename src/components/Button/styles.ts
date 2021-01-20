@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
 export const Container = styled(RectButton)`
   width: 80%;
@@ -9,10 +10,16 @@ export const Container = styled(RectButton)`
 
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 `;
 
 export const ButtonText = styled.Text`
   font-family: 'Roboto-Bold';
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
+`;
+
+export const Icon = styled(IoniconsIcon)`
+  margin-right: 4px;
+  color: #fff;
 `;

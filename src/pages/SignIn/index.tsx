@@ -16,6 +16,7 @@ const SignIn: React.FC = () => {
       <Input />
       <Input />
       <Button
+        icon="log-in"
         onPress={() => {
           console.log('clickable');
         }}
