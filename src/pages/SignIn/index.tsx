@@ -15,7 +15,13 @@ const SignIn: React.FC = () => {
       <Title>Faça seu logon</Title>
       <Input />
       <Input />
-      <Button>Entrar</Button>
+      <Button
+        onPress={() => {
+          console.log('clickable');
+        }}
+      >
+        Entrar
+      </Button>
     </Container>
   );
 };
