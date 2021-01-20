@@ -5,6 +5,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   background-color: #191919;
+  padding: 0 30px;
 `;
 
 export const Title = styled.Text`
