@@ -1,5 +1,11 @@
 import React from 'react';
-import { Image } from 'react-native';
+import {
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+  ScrollView,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -18,29 +24,41 @@ import {
 const SignIn: React.FC = () => {
   return (
     <>
-      <Container>
-        <Image source={logoImg} />
-        <Title>Faça seu logon</Title>
-
-        <Input name="email" icon="mail" placeholder="Email" />
-
-        <Input name="password" icon="lock-closed" placeholder="Password" />
-
-        <Button
-          onPress={() => {
-            console.log('clickable');
-          }}
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}
         >
-          Entrar
-        </Button>
-        <ForgotPassword
-          onPress={() => {
-            console.log('forgotpassword');
-          }}
-        >
-          <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-        </ForgotPassword>
-      </Container>
+          <Container>
+            <Image source={logoImg} />
+            <View>
+              <Title>Faça seu logon</Title>
+            </View>
+            <Input name="email" icon="mail" placeholder="Email" />
+
+            <Input name="password" icon="lock-closed" placeholder="Password" />
+
+            <Button
+              onPress={() => {
+                console.log('clickable');
+              }}
+            >
+              Entrar
+            </Button>
+            <ForgotPassword
+              onPress={() => {
+                console.log('forgotpassword');
+              }}
+            >
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+            </ForgotPassword>
+          </Container>
+        </ScrollView>
+      </KeyboardAvoidingView>
       <CreateAccountButton
         onPress={() => {
           console.log('createaccountbutton');
