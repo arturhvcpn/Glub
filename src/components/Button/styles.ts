@@ -5,7 +5,7 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 export const Container = styled(RectButton)`
   width: 100%;
   height: 60px;
-  background-color: rgb(0, 207, 255);
+  background-color: #359df7;
   border-radius: 30px;
   margin-top: 16px;
 

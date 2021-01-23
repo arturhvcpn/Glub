@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from '../../components/Card';
-import { Container } from './styles';
+import Button from '../../components/Button';
+import { Container, DrinkWatterStyledButton } from './styles';
+import CircleProgress from '../../components/CircleProgress';
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +11,10 @@ const Home: React.FC = () => {
         title="Good morning☀️"
         paragraph="Its hot out there. You better drink some Water!💧"
       />
+      <CircleProgress />
+      <DrinkWatterStyledButton>
+        <Button icon="water">Beber Água</Button>
+      </DrinkWatterStyledButton>
     </Container>
   );
 };
