@@ -5,7 +5,10 @@ import { Container } from './styles';
 const Home: React.FC = () => {
   return (
     <Container>
-      <Card />
+      <Card
+        title="Good morning☀️"
+        paragraph="Its hot out there. You better drink some Water!💧"
+      />
     </Container>
   );
 };

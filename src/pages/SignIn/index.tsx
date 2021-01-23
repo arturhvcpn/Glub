@@ -64,13 +64,7 @@ const SignIn: React.FC = () => {
               secureTextEntry
             />
 
-            <Button
-              onPress={() => {
-                console.log('clickable');
-              }}
-            >
-              Entrar
-            </Button>
+            <Button onPress={() => navigation.navigate('Home')}>Entrar</Button>
             <ForgotPassword
               onPress={() => {
                 console.log('forgotpassword');

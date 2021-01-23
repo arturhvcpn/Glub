@@ -2,11 +2,16 @@ import React from 'react';
 
 import { Container, Title, Subtitle } from './styles';
 
-const Card: React.FC = () => {
+type CardProps = {
+  title: string;
+  paragraph?: string;
+};
+
+const Card: React.FC<CardProps> = ({ title, paragraph }: CardProps) => {
   return (
     <Container>
-      <Title>Good morning☀️</Title>
-      <Subtitle>Its hot out there. You better drink some Water!💧</Subtitle>
+      <Title>{title}</Title>
+      <Subtitle>{paragraph}</Subtitle>
     </Container>
   );
 };
