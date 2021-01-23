@@ -6,6 +6,7 @@ import {
   View,
   ScrollView,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -20,6 +21,7 @@ import {
 } from './styles';
 
 const SignUp: React.FC = () => {
+  const navigation = useNavigation();
   return (
     <>
       <KeyboardAvoidingView
@@ -38,9 +40,22 @@ const SignUp: React.FC = () => {
             </View>
             <Input name="user" icon="person" placeholder="Nome" />
 
-            <Input name="email" icon="mail" placeholder="Email" />
+            <Input
+              autoCorrect={false}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              returnKeyType="next"
+              name="email"
+              icon="mail"
+              placeholder="Email"
+            />
 
-            <Input name="password" icon="lock-closed" placeholder="Password" />
+            <Input
+              name="password"
+              icon="lock-closed"
+              placeholder="Password"
+              secureTextEntry
+            />
 
             <Button
               onPress={() => {
@@ -52,11 +67,7 @@ const SignUp: React.FC = () => {
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
-      <BackToSignInButton
-        onPress={() => {
-          console.log('backtosignIn');
-        }}
-      >
+      <BackToSignInButton onPress={() => navigation.goBack()}>
         <Icon name="arrow-back-outline" size={20} color="#fff" />
         <BackToSignInText>Voltar para logon</BackToSignInText>
       </BackToSignInButton>
