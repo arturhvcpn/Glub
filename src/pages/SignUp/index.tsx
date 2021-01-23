@@ -62,7 +62,7 @@ const SignUp: React.FC = () => {
                 console.log('clickable');
               }}
             >
-              Entrar
+              Criar conta
             </Button>
           </Container>
         </ScrollView>
