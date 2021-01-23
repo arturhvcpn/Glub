@@ -16,7 +16,7 @@ export const TitleCicleProgres = styled.Text`
 `;
 
 export const TextCicleProgres = styled.Text`
-  color: #3fa8e7;
+  color: #47b8f8;
   font-size: 36px;
   font-family: 'Roboto-Bold';
   justify-content: center;

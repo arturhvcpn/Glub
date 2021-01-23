@@ -10,9 +10,10 @@ const CircleProgress: React.FC = ({ children }) => {
         size={300}
         width={12}
         fill={35}
-        tintColor="#359df7"
+        tintColor="#3fa8e7"
         onAnimationComplete={() => console.log('onAnimationComplete')}
         backgroundColor="#3d3d3d"
+        dashedBackground={{ gap: 80, width: 8 }}
       >
         {fill => (
           <>
