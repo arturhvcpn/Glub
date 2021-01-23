@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../../components/Card';
-import { Container } from './styles';
+import Button from '../../components/Button';
+import { Container, DrinkWatterStyledButton } from './styles';
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,9 @@ const Home: React.FC = () => {
         title="Good morning☀️"
         paragraph="Its hot out there. You better drink some Water!💧"
       />
+      <DrinkWatterStyledButton>
+        <Button icon="water">Beber Água</Button>
+      </DrinkWatterStyledButton>
     </Container>
   );
 };
