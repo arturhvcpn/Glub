@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
+// import Modal from '../../components/Modal';
 import { Container, DrinkWatterStyledButton } from './styles';
 import CircleProgress from '../../components/CircleProgress';
+import { MilliliterContext } from '../../contexts/MilliliterContext';
 
 const Home: React.FC = () => {
+  const { milliliter, useSetCounterMilliliter } = useContext(MilliliterContext);
   return (
     <Container>
       <Card
@@ -13,7 +16,9 @@ const Home: React.FC = () => {
       />
       <CircleProgress />
       <DrinkWatterStyledButton>
-        <Button icon="water">Beber Água</Button>
+        <Button onPress={useSetCounterMilliliter} icon="water">
+          Beber Água
+        </Button>
       </DrinkWatterStyledButton>
     </Container>
   );
