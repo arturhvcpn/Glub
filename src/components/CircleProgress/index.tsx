@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Container, TitleCicleProgres, TextCicleProgres } from './styles';
+import {
+  useCounterMilliliter,
+  MilliliterContext,
+} from '../../contexts/MilliliterContext';
 
-const CircleProgress: React.FC = ({ children }) => {
+interface CircleProgressProps {
+  children?: string;
+}
+
+const CircleProgress: React.FC<CircleProgressProps> = ({
+  children,
+}: CircleProgressProps) => {
+  const { milliliter } = useContext(MilliliterContext);
+  // const { milliliter } = useCounterMilliliter();
+
   return (
     <Container>
       <AnimatedCircularProgress
         rotation={0}
         size={300}
         width={12}
-        fill={35}
+        fill={milliliter}
         tintColor="#3fa8e7"
-        onAnimationComplete={() => console.log('onAnimationComplete')}
         backgroundColor="#3d3d3d"
-        dashedBackground={{ gap: 80, width: 8 }}
       >
         {fill => (
           <>
             <TitleCicleProgres>DRINK NOW</TitleCicleProgres>
             <TextCicleProgres>
-              {' '}
-              {/* {fill} */}
-              900 ml
+              {milliliter}
+              ml
             </TextCicleProgres>
           </>
         )}
